@@ -1,38 +1,4 @@
-#ProductAnalysis.java
-
 package co.anbu.entity;
-
-import java.util.Scanner;
-import co.anbu.entity.ProductService;
-
-public class ProductAnalysis {
-
-	public static void main(String[] args) {
-		ProductService p1 = new ProductService();
-		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
-		if (n == 1) {
-			int code = sc.nextInt();
-			if (p1.findNameByCode(code) == null) {
-				System.out.println("Product Not Found");
-			} else {
-				System.out.println(p1.findNameByCode(code));
-			}
-		} else if (n == 2) {
-			sc.nextLine();
-			String category = sc.nextLine();
-			if (p1.findMaxPriceProduct(category) == null) {
-				System.out.println("Product Not Found or Invalid Input");
-			} else {
-				System.out.println(p1.findMaxPriceProduct(category));
-			}
-		} else {
-			System.out.println("Invalid Input");
-		}
-	}
-}
-
-#Product.java
 
 package co.anbu.entity;
 
@@ -83,9 +49,6 @@ public class Product {
 	
 }
 
-#ProductData.java
-package co.anbu.entity;
-
 public class ProductData {
 	private static Product[] products;
 	
@@ -107,7 +70,6 @@ public class ProductData {
 
 }
 
-#ProductService.java
 package co.anbu.entity;
 
 import co.anbu.entity.Product;
@@ -145,4 +107,34 @@ public class ProductService {
 
 }
 
+
+import java.util.Scanner;
+import co.anbu.entity.ProductService;
+
+public class Solution {
+
+	public static void main(String[] args) {
+		ProductService p1 = new ProductService();
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		if (n == 1) {
+			int code = sc.nextInt();
+			if (p1.findNameByCode(code) == null) {
+				System.out.println("Product Not Found");
+			} else {
+				System.out.println(p1.findNameByCode(code));
+			}
+		} else if (n == 2) {
+			sc.nextLine();
+			String category = sc.nextLine();
+			if (p1.findMaxPriceProduct(category) == null) {
+				System.out.println("Product Not Found or Invalid Input");
+			} else {
+				System.out.println(p1.findMaxPriceProduct(category));
+			}
+		} else {
+			System.out.println("Invalid Input");
+		}
+	}
+}
 
